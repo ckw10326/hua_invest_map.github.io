@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天虹科技 (6937) 營運戰略簡評</title>
+    <style>
+        /* 定義色彩變數，確保支援亮/暗主題切換 */
+        :root {
+            --bg-color: #f4f7f9;
+            --container-bg: #ffffff;
+            --text-primary: #333333;
+            --text-secondary: #555555;
+            --primary-color: #0056b3;
+            --primary-hover: #004494;
+            --border-color: #e0e0e0;
+            --tab-bg: #e9ecef;
+            --tab-active-bg: #ffffff;
+            --table-header-bg: #0056b3;
+            --table-header-text: #ffffff;
+            --table-row-alt: #f8f9fa;
+            --highlight-bg: #fff3cd;
+            --highlight-text: #856404;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #121212;
+                --container-bg: #1e1e1e;
+                --text-primary: #e0e0e0;
+                --text-secondary: #aaaaaa;
+                --primary-color: #66b2ff;
+                --primary-hover: #99ccff;
+                --border-color: #333333;
+                --tab-bg: #2d2d2d;
+                --tab-active-bg: #1e1e1e;
+                --table-header-bg: #004494;
+                --table-header-text: #e0e0e0;
+                --table-row-alt: #2a2a2a;
+                --highlight-bg: #4d4015;
+                --highlight-text: #ffdd88;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.8;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: var(--container-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        /* 圖片自適應框架 */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            margin: 16px 0;
+        }
+
+        /* 頂部標題 */
+        .header {
+            padding: 30px;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        /* 分頁導航 (點擊部分名稱) */
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: var(--tab-bg);
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .tab-link {
+            flex: 1;
+            min-width: 120px;
+            padding: 16px 10px;
+            text-align: center;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 15px;
+            color: var(--text-secondary);
+            background-color: var(--tab-bg);
+            border: none;
+            outline: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .tab-link:hover {
+            background-color: var(--border-color);
+            color: var(--text-primary);
+        }
+
+        .tab-link.active {
+            background-color: var(--tab-active-bg);
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        /* 分頁內容 */
+        .tab-content {
+            display: none;
+            padding: 40px;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 排版與內文樣式 */
+        h2 {
+            color: var(--primary-color);
+            font-size: 22px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h3 {
+            font-size: 18px;
+            margin: 24px 0 12px 0;
+            color: var(--text-primary);
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+        }
+
+        strong {
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .highlight-box {
+            background-color: var(--highlight-bg);
+            color: var(--highlight-text);
+            padding: 16px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+        }
+
+        ul {
+            margin-bottom: 16px;
+            padding-left: 24px;
+            color: var(--text-secondary);
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* 專業表格設計 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 15px;
+        }
+
+        th, td {
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--table-header-bg);
+            color: var(--table-header-text);
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--table-row-alt);
+        }
+        
+        tr:hover {
+            background-color: var(--border-color);
+        }
+
+        /* Q&A 區塊樣式 */
+        .qa-item {
+            margin-bottom: 24px;
+        }
+        .qa-q {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+        .qa-a {
+            padding-left: 16px;
+            border-left: 3px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>天虹科技 (6937) 營運戰略簡評</h1>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-link active" onclick="openTab(event, 'tab1')">營運簡評</button>
+        <button class="tab-link" onclick="openTab(event, 'tab2')">設備商本質</button>
+        <button class="tab-link" onclick="openTab(event, 'tab3')">兩大營收支柱</button>
+        <button class="tab-link" onclick="openTab(event, 'tab4')">營收現狀與真相</button>
+        <button class="tab-link" onclick="openTab(event, 'tab5')">競爭與合作</button>
+        <button class="tab-link" onclick="openTab(event, 'tab6')">思辨 Q&A</button>
+    </div>
+
+    <div id="tab1" class="tab-content active">
+        <h2>營運簡評</h2>
+        <h3>一、 護城河：從「維修」到「替代」的本土優勢</h3>
+        <p>天虹的護城河不是那種「世界第一」的絕對技術霸權，而是一種<strong>「貼身肉搏的國產韌性」</strong>。</p>
+        <ul>
+            <li><strong>地緣政治的紅利：</strong>當台積電、日月光需要「在地供應鏈」來降低斷鏈風險時，天虹是少數在 ALD (原子層沉積) 與 PVD (物理氣相沉積) 具備自主研發能力的台灣廠。</li>
+            <li><strong>客製化的深度：</strong>國際大廠（如 AMAT）的標準機台通常很硬，不願意為單一客戶的小製程修改硬體。天虹強在<strong>「你敢提需求，我敢改機器」</strong>。這種靈活性讓它在客戶開發新製程（如 FOPLP）時，成為不可替代的夥伴。</li>
+        </ul>
+
+        <h3>二、 未來展望：2026 是「蹲下後起跳」的關鍵年</h3>
+        <p>我們從數據看到 2025 年營收衰退，但那是因為它正在經歷<strong>「產品結構的大置換」</strong>。</p>
+        <ul>
+            <li><strong>2025 (蹲下)：</strong>消化舊的化合物半導體訂單，同時在各大客戶廠房進行 FOPLP 與 Bonder 的 Beta Site 驗證。這段時間毛利低、研發高，股價與獲利都在磨底。</li>
+            <li><strong>2026 (起跳)：</strong>
+                <ul>
+                    <li><strong>核心驗收：</strong>FOPLP 設備進入正式量產驗收，尾款入帳將帶動營收暴力跳增。</li>
+                    <li><strong>高毛利回流：</strong>隨著 EUV 量測設備二代機與 ALD 在高階製程的應用增加，毛利率有望重回 40% - 45% 的舒適圈。</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>三、 核心發展策略：從「單機」進化到「整線方案」</h3>
+        <p>天虹目前的動作顯示，它不甘於只做一個「賣 PVD 的商人」。</p>
+        <ul>
+            <li><strong>矽光子 (CPO) 與先進封裝聯動：</strong>天虹正在研發能同時處理濺鍍與貼合的整合方案。當未來 AI 晶片需要更複雜的異質整合（Chiplet），天虹的 Bonder + PVD 組合拳會比單賣 PVD 的競爭對手更有議價權。</li>
+            <li><strong>國際化佈局：</strong>成立日本子公司「哲虹」。這是一個非常激進且正確的信號。這代表天虹的 ALD 技術已經具備去跟日本大廠（如 TEL）「踢館」的實力，這是本益比（PE）能否從 25 倍跳向 40 倍的終極變數。</li>
+        </ul>
+
+        <div class="highlight-box">
+            <strong>💡 林獻文的總結：你該有的商業直覺</strong><br>
+            目前的營運狀態可以用一句話形容：「營收是落後指標，存貨與合約負債是現在式，而毛利率的回升則是未來的勝利號角。」<br><br>
+            如果你看到營收大漲，先別高興，回來看這張「戰略看板」：<br>
+            • 如果毛利率跟著漲 ➔ 天虹已經贏了，它掌握了定價權。<br>
+            • 如果毛利率還在跌 ➔ 它還在流血搶市，護城河還不夠深。
+        </div>
+    </div>
+
+    <div id="tab2" class="tab-content">
+        <h2>半導體設備商的「商業靈魂」</h2>
+        
+        <h3>一、 這行怎麼理解？</h3>
+        <p>設備商賣的不只是機器，而是<strong>「信任的壟斷」</strong>。</p>
+        <ul>
+            <li><strong>信任門檻（轉換成本）：</strong>一旦進入台積電或日月光產線，這台機器就成了製程的一部分。除非對手能提供倍數級的產能提升或顯著降低成本，否則客戶不會冒著停產風險更換設備。</li>
+            <li><strong>耗材效應（刮鬍刀與刀片）：</strong>機器是廣告，零件與專利耗材才是長期獲利引擎。一旦機台裝機數（Installed Base）達到規模，即便景氣下滑，客戶仍需採購零件維持產線運作，這讓設備商具備強大的抗週期性。</li>
+        </ul>
+
+        <h3>二、 核心進化里程碑</h3>
+        <p>這是一場從「追求認可」到「定義規則」的過程：</p>
+        <ul>
+            <li><strong>✅ 首台交機 (Alpha/Beta Site)：</strong>這不只是取得入場券，更是<strong>「獲准面試」。此階段毛利最低，重點在於與客戶共同研發</strong>。</li>
+            <li><strong>✅ 客戶重複下單 (Repeat Order)：</strong>良率與可靠性的唯一鐵證。這代表機台已標準化，公司開始進入規模化獲利期。</li>
+            <li><strong>✅ 獲大廠付費開發 (NRE)：</strong>最高榮譽。代表你已成為對方的戰略戰友，客戶在設計下一代產品時，必須先問過你的機器行不行。</li>
+        </ul>
+
+        <h3>三、 必須緊盯的「生命線數據」</h3>
+        <p>除了看熱鬧，你要看清公司的錢包健康度：</p>
+        <ul>
+            <li><strong>合約負債 (Contract Liabilities)：</strong>「訂單動能」。代表客戶已經給了訂金，排隊等交貨，這是營收的領先指標。</li>
+            <li><strong>營業現金流 (OCF)：</strong>「入袋為安」。觀察客戶是否如期付錢，確保營收不是靠賒帳堆出來的。</li>
+            <li><strong>應收帳款周轉天數 (A/R Days)：</strong>「驗收效率」。如果這個數字變長，代表機台卡在客戶廠房驗收不了，或是話語權正在流失。</li>
+        </ul>
+
+        <div class="highlight-box">
+            <strong>💡 獻文的思辨總結</strong><br>
+            這段文字現在具備了層次感：從最基本的<strong>「信任」，談到最現實的「耗材」，最後落地到「驗收效率」</strong>。
+        </div>
+    </div>
+
+    <div id="tab3" class="tab-content">
+        <h2>兩大營收支柱拆解</h2>
+        <p>目前天虹的營收結構主要由以下兩塊構成：</p>
+
+        <h3>1. 半導體零件與耗材（營收占比：約 75% - 80%）</h3>
+        <p><strong>這是什麼：</strong>幫客戶（如台積電、聯電、日月光）維修、更換國外原廠設備的零件，或是提供本土化的替代耗材。</p>
+        <p><strong>特點：</strong></p>
+        <ul>
+            <li><strong>高毛利：</strong>這部分的毛利率通常在 45% - 55% 之間。</li>
+            <li><strong>穩定性：</strong>只要晶圓廠在動，這筆錢就得付。</li>
+            <li><strong>定位：</strong>這是天虹的「麵包」，用來養活研發團隊，支撐公司運作。</li>
+        </ul>
+
+        <h3>2. 自有品牌設備 (PVD/ALD/Bonder)（營收占比：約 20% - 25%）</h3>
+        <p><strong>這是什麼：</strong>天虹自己研發的機器，包括你最看重的 FOPLP 用的 PVD、原子層沉積 ALD，以及貼合機 Bonder。</p>
+        <p><strong>特點：</strong></p>
+        <ul>
+            <li><strong>中毛利（目前）：</strong>毛利率大約在 30% - 38% 之間。</li>
+            <li><strong>波動大：</strong>一台機器幾千萬，驗收過了才算錢，沒過就掛在存貨。</li>
+            <li><strong>定位：</strong>這是天虹的「夢想」，也是決定股價本益比（PE）能否從 20 倍跳到 40 倍的唯一關鍵。</li>
+        </ul>
+    </div>
+
+    <div id="tab4" class="tab-content">
+        <h2>營收現狀與結構真相</h2>
+        
+        <h3>第一部分：核心營收結構 (二八法則)</h3>
+        <p><strong>林獻文點評：</strong>這就是天虹的「麵包與夢想」。你要看它是靠修機器過日子，還是靠賣機器翻身。</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>業務區塊</th>
+                    <th>營收占比</th>
+                    <th>毛利率 (GPM)</th>
+                    <th>商業屬性</th>
+                    <th>關鍵觀察</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>零件與耗材</td>
+                    <td>~75%</td>
+                    <td>45% - 55%</td>
+                    <td>穩定的現金牛</td>
+                    <td>只要晶圓廠動，這筆錢就得付。</td>
+                </tr>
+                <tr>
+                    <td>自有設備</td>
+                    <td>~25%</td>
+                    <td>30% - 38%</td>
+                    <td>成長的敲門磚</td>
+                    <td>FOPLP/ALD 驗收成功是爆發點。</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>第二部分：2025 - 2026 財務數據真相</h3>
+        <p><strong>林獻文點評：</strong>盯住 2025 Q3 的毛利紅字，那是轉型期必經的「陣痛」。</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>年度/季度</th>
+                    <th>單季/單月營收</th>
+                    <th>毛利率 (GPM)</th>
+                    <th>存貨 (百萬)</th>
+                    <th>合約負債</th>
+                    <th>研發費用率</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2026/01</td>
+                    <td>1.53 億 (年增 21%)</td>
+                    <td>(待季報)</td>
+                    <td>核心備貨區</td>
+                    <td>新訂單湧入</td>
+                    <td>效益顯現期</td>
+                </tr>
+                <tr>
+                    <td>2025 全年</td>
+                    <td>22.45 億 (年減 13%)</td>
+                    <td>約 38-40%</td>
+                    <td>約 17 億</td>
+                    <td>高位盤整</td>
+                    <td>12 - 15%</td>
+                </tr>
+                <tr>
+                    <td>2025 Q3</td>
+                    <td>5.49 億</td>
+                    <td>36.5% (警示)</td>
+                    <td>1,680</td>
+                    <td>穩定</td>
+                    <td>14%</td>
+                </tr>
+                <tr>
+                    <td>2025 Q2</td>
+                    <td>5.12 億</td>
+                    <td>39.2%</td>
+                    <td>1,550</td>
+                    <td>微升</td>
+                    <td>13%</td>
+                </tr>
+                <tr>
+                    <td>2025 Q1</td>
+                    <td>4.61 億</td>
+                    <td>41.9%</td>
+                    <td>1,420</td>
+                    <td>顯著增加</td>
+                    <td>12%</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="highlight-box">
+            <strong>💡 數據應用邏輯 A：毛利與營收的「微笑曲線」</strong><br>
+            • <strong>現狀觀察：</strong>當營收跳增但毛利掉到 36% 時，並非競爭力消失，而是在<strong>「試水溫」</strong>（新機型如 FOPLP 的初期折舊與人工成本）。<br>
+            • <strong>進階觀察：</strong>投資人應緊盯 2026 Q2 後的毛利率是否止跌回升。若回升，代表設備度過學習曲線，進入高獲利的「量產認證期」。
+        </div>
+
+        <div class="highlight-box">
+            <strong>💡 數據應用邏輯 B：存貨是「未來的煙火」</strong><br>
+            • <strong>現狀觀察：</strong>存貨高掛 (17億) 卻營收年減，代表貨已備好但「卡在驗收」。這 17 億中有極大比例是為 FOPLP 與 12 吋先進製程 預備的。<br>
+            • <strong>進階觀察：</strong>只要存貨開始下降並精準轉化為營收，就是業績大爆發的時刻。
+        </div>
+
+        <h3>存貨周轉警示 (Inventory Turnover)</h3>
+        <p><strong>觀察點：</strong>天虹目前的存貨金額接近全年營收的 75%，這在設備業屬於<strong>「激進備貨」</strong>。</p>
+        <p><strong>獻文點評：</strong>這是一把雙面刃。若驗收順利，這是翻倍的動能；若驗收延後，這會造成現金流壓力。2026 年我們不看營收多高，要看<strong>「存貨周轉天數」是否縮短</strong>。</p>
+    </div>
+
+    <div id="tab5" class="tab-content">
+        <h2>產業競爭與合作地圖 (雙賽道全景)</h2>
+        
+        <h3>第一部分：天虹 PVD 兩大應用：毛利率深度拆解</h3>
+        <p><strong>林獻文點評：</strong>這不是單純的數字，這是「定價權」的體現。毛利的高低，告訴你誰才是這塊市場的老大。</p>
+        
+        <p><strong>賽道 A：先進封裝 (FOPLP)</strong></p>
+        <ul>
+            <li><strong>核心角色：</strong>RDL 重佈線層種子層鍍膜。</li>
+            <li><strong>毛利率預估：</strong>48% - 55% (極高)。</li>
+            <li><strong>競爭屬性：</strong>利基市場、高技術壁壘。天虹在此具備「國產唯一」的議價優勢，是拉升整體 PE 的核心。</li>
+        </ul>
+
+        <p><strong>賽道 B：第三代半導體 (SiC / GaN)</strong></p>
+        <ul>
+            <li><strong>核心角色：</strong>正/背面金屬化導電層。</li>
+            <li><strong>毛利率預估：</strong>38% - 42% (穩定)。</li>
+            <li><strong>競爭屬性：</strong>成熟市場、存量競爭。這部分貢獻了穩定的零件與維修收入，是天虹景氣低迷時的「救命糧草」。</li>
+        </ul>
+
+        <h3>合競關係</h3>
+        <h4>競爭對手 (死鬥層級)</h4>
+        <p>針對不同賽道，天虹面對的是完全不同的敵人。</p>
+        <ul>
+            <li><strong>Evatec (瑞士)：【FOPLP 終極宿敵】</strong><br>全球 PVD 霸主，天虹所有高毛利產品的定價標竿。贏過它，天虹就是世界級。</li>
+            <li><strong>Tokyo Electron (TEL / 日本)：【ALD 高階威脅】</strong><br>當天虹想從封裝跨入「前段製程」時，TEL 是擋在前方、掌握物理極限的巨人。</li>
+            <li><strong>友威科 (3580)：【PVD 本土影子】</strong><br>屬於中低階/成熟製程競爭者。若天虹的 PVD 毛利掉到跟友威科一樣（約 25-30%），則代表天虹已失去技術溢價。</li>
+        </ul>
+
+        <h4>合作/戰友 (共榮圈)</h4>
+        <p>設備業打的是「團體戰」，看誰跟誰的機器組合成一條線。</p>
+        <ul>
+            <li><strong>弘塑 (3131)：【濕製程風向球】</strong><br>先進封裝產線中，弘塑做洗與蝕刻，天虹做鍍膜。兩者「整線入駐」的聯動性極強。</li>
+            <li><strong>志聖 (2467)：【FOPLP 核心夥伴】</strong><br>解決面板級封裝最頭痛的「熱壓與烘烤」問題，與天虹的 PVD 共同解決翹曲問題。</li>
+            <li><strong>鑫科 (3663)：【靶材耗材支撐】</strong><br>天虹賣出越多 PVD，鑫科的靶材消耗就越快。兩者是典型的「機台與刀片」共生關係。</li>
+        </ul>
+
+        <h4>指標客戶 (誰在給錢？)</h4>
+        <ul>
+            <li><strong>日月光 (3711) / 群創 (3481)：</strong>FOPLP 主戰場。這兩家的驗收進度，直接決定天虹 2026 年那 50% 毛利能不能入帳。</li>
+            <li><strong>台積電 / 聯電：</strong>ALD 與 高階量測主戰場。這是天虹從「封裝廠設備」跨入「晶圓廠設備」的終極勳章。</li>
+            <li><strong>漢磊 / 嘉晶：</strong>第三代半導體觀測點。觀察這類 IDM 廠的稼動率，就能預知天虹「零件收入」的復甦力道。</li>
+        </ul>
+    </div>
+
+    <div id="tab6" class="tab-content">
+        <h2>商業直覺修煉：終極 Q&A 庫</h2>
+        
+        <div class="qa-item">
+            <div class="qa-q">Q1: 營收跳增，但「應收帳款」同步暴增，是喜訊嗎？</div>
+            <div class="qa-a"><strong>獻文：</strong> 這是大忌。代表你出了貨，但在客戶（大廠）面前沒地位，錢收不回來。這會導致現金流壓力，屬於「虛假繁榮」。</div>
+        </div>
+
+        <div class="qa-item">
+            <div class="qa-q">Q2: 拿到「第二、三台」FOPLP 訂單就是良率過關嗎？</div>
+            <div class="qa-a"><strong>獻文：</strong> 不。可能是大廠在「養備胎」。真正的過關是看「毛利率是否回升至 42%」以及是否來自「同一廠房的量產線」續購。</div>
+        </div>
+
+        <div class="qa-item">
+            <div class="qa-q">Q3: 東捷營收創新高，天虹卻沒動，要擔心嗎？</div>
+            <div class="qa-a"><strong>獻文：</strong> 客戶層次不同。東捷做低階搬運，交機快；天虹做核心鍍膜，磨合久。天虹的慢，是因為它做的東西「無人能替」。</div>
+        </div>
+
+        <div class="qa-item">
+            <div class="qa-q">Q4: 如果弘塑 FOPLP 設備大賣，天虹卻毛利變差？</div>
+            <div class="qa-a"><strong>獻文：</strong> 代表產業趨勢對，但天虹競爭力不足，被迫「流血搶單」。這時你要小心天虹被邊緣化。</div>
+        </div>
+
+        <div class="qa-item">
+            <div class="qa-q">Q5: 如何一眼判斷天虹管理層講話的真實性？</div>
+            <div class="qa-a"><strong>獻文：</strong> 看「合約負債」與其說詞是否一致。如果他說前景大好，但合約負債卻連跌兩季，那就是在「畫大餅」。</div>
+        </div>
+
+        <div class="qa-item">
+            <div class="qa-q">Q6: 如果驗收成功，會發重大訊息公告嗎？</div>
+            <div class="qa-a"><strong>獻文：</strong> 通常不會。你要從「月營收暴增」與「媒體餵料報導」中拼湊真相。等到官宣，股價通常已漲完。</div>
+        </div>
+
+        <div class="highlight-box">
+            <div class="qa-q" style="color: inherit; font-size: 18px;">🏆 終極思辨考題</div>
+            <strong>Q: 若 2026 Q1 營收大好，但法說會表示「日本市場推廣不順」，你該給天虹多少倍本益比？</strong><br><br>
+            <strong>林獻文解：</strong>若只靠本土訂單，它只是「國產設備股」，合理 PE 約 20 倍。若日本市場成功，它才是「全球競爭者」，PE 才有資格上看 40 倍。這決定了你投資的是「平庸公司」還是「偉大公司」。
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function openTab(evt, tabId) {
+        // 隱藏所有 tab 內容
+        var tabContent = document.getElementsByClassName("tab-content");
+        for (var i = 0; i < tabContent.length; i++) {
+            tabContent[i].style.display = "none";
+            tabContent[i].classList.remove("active");
+        }
+
+        // 移除所有 tab 連結的 active 樣式
+        var tabLinks = document.getElementsByClassName("tab-link");
+        for (var i = 0; i < tabLinks.length; i++) {
+            tabLinks[i].className = tabLinks[i].className.replace(" active", "");
+        }
+
+        // 顯示點擊的 tab 內容，並加上 active 樣式
+        var activeTab = document.getElementById(tabId);
+        activeTab.style.display = "block";
+        // 觸發重新計算動畫
+        void activeTab.offsetWidth; 
+        activeTab.classList.add("active");
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+</body>
+</html>
